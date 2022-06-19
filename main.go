@@ -5,7 +5,6 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/tomiprasetyo/belajar-crud-api-gin/internal/controllers"
 )
 
@@ -20,7 +19,7 @@ func main() {
 	var e error
 
 	// koneksi ke database
-	if db, e = sql.Open("sqlite3", "/data.db"); e != nil {
+	if db, e = sql.Open("mysql", "root@tcp(localhost:3306)/go_react_auth"); e != nil {
 		log.Fatalf("Error : %v", e)
 	}
 	defer db.Close()
