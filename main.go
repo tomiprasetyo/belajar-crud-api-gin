@@ -19,7 +19,7 @@ func main() {
 	var e error
 
 	// koneksi ke database
-	if db, e = sql.Open("mysql", "root@tcp(localhost:3306)/go_react_auth"); e != nil {
+	if db, e = sql.Open("mysql", "root@tcp(localhost:3306)/belajar_crud_api_gin"); e != nil {
 		log.Fatalf("Error : %v", e)
 	}
 	defer db.Close()
