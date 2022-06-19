@@ -1,12 +1,15 @@
 package controllers
 
 import (
+	"database/sql"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-// method untuk mengambil semua data product
-func GetAllProduct(c *gin.Context) {
-	c.String(http.StatusOK, "success get all products")
+// method handler untuk mengambil semua data product
+func GetAllProduct(db *sql.DB) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.String(http.StatusOK, "success get all products")
+	}
 }
