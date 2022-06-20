@@ -25,6 +25,7 @@ func GetProductById(db *sql.DB) gin.HandlerFunc {
 			return
 		}
 
+		// query untuk mencari data product berdasarkan id
 		var row = db.QueryRowContext(ctx, "SELECT guid, name, price, description, createdAt FROM products WHERE guid=?", binding.GUID)
 
 		var product Product
